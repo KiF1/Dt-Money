@@ -28,6 +28,7 @@ button{
     background: transparent;
     font-weight: bold;
     border-radius: 6px;
+    cursor: pointer;
 
     &:hover{
         border: 1px solid ${props => props.theme["green-500"]};
