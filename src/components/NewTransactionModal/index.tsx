@@ -2,8 +2,10 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { ArrowCircleDown, ArrowCircleUp, X } from "phosphor-react";
 import { CloseButton, Content, Overlay, TransactionType, TransactionTypeButton } from "./styles";
 import * as z from 'zod';
-import { zodResolver }  from "@hookform/resolvers/zod"
+import { zodResolver } from "@hookform/resolvers/zod"
 import { Controller, useForm } from "react-hook-form";
+import { useContext } from "react";
+import { TransactionsContext } from "../../contexts/TransactionsContext";
 
 const newTransactionFormSchema = z.object({
     description: z.string(),
@@ -15,18 +17,27 @@ const newTransactionFormSchema = z.object({
 type NewTransactionFormInputs = z.infer<typeof newTransactionFormSchema>
 
 export function NewTransactionModal() {
+    const { createTransaction } = useContext(TransactionsContext)
+
     const { register, handleSubmit, formState: {
         isSubmitting
-    }, control } = useForm<NewTransactionFormInputs>({
+    }, control, reset } = useForm<NewTransactionFormInputs>({
         resolver: zodResolver(newTransactionFormSchema),
     })
 
-    function handleCreateNewTransaction(data: NewTransactionFormInputs){
-        console.log(data)
+    async function handleCreateNewTransaction(data: NewTransactionFormInputs) {
+        const { category, description, price, type } = data;
+        await createTransaction({
+            description,
+            price,
+            category,
+            type,
+        })
+        reset();
     }
 
 
-    return(
+    return (
         <Dialog.Portal>
             <Overlay />
             <Content>
@@ -34,7 +45,7 @@ export function NewTransactionModal() {
                 <CloseButton><X size={24} /></CloseButton>
                 <form onSubmit={handleSubmit(handleCreateNewTransaction)}>
                     <input type="text" placeholder="Descrição" required {...register('description')} />
-                    <input type="number" placeholder="Preço" required {...register('price', {valueAsNumber: true})} /> 
+                    <input type="number" placeholder="Preço" required {...register('price', { valueAsNumber: true })} />
                     <input type="text" placeholder="Categorias" required {...register('category')} />
                     <Controller control={control} name="type" render={
                         ({ field }) => {
@@ -55,6 +66,6 @@ export function NewTransactionModal() {
                     <button disabled={isSubmitting} type="submit">Cadastrar</button>
                 </form>
             </Content>
-        </Dialog.Portal>               
+        </Dialog.Portal>
     )
 }
