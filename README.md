@@ -17,6 +17,9 @@
 - Utiliza o Axios para consumir a Api.
 - Utiliza a bliblioteca Json-Server para funcionar como "back-end".
 
+## Apresentação do Pojeto:
+- <img src="./money.gif">
+
 ## Rodando o Projeto:
 - Para rodar o projeto, basta clonar o repositório e após clonado, rodar o comando "npm i" após entrar na pasta e após instalar as dependências na pasta clonada, rodar o comando "npm run dev". Após esses passos o projeto funcionará normalmente.
 
