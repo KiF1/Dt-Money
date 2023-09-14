@@ -55,6 +55,55 @@
       "type": "income",
       "createdAt": "2023-09-12T13:20:06.151Z",
       "id": 7
+    },
+    {
+      "description": "invest",
+      "category": "Saque do Investimento: invest",
+      "price": 10511.62,
+      "type": "income",
+      "createdAt": "2023-09-14T18:23:26.194Z",
+      "id": 8
+    },
+    {
+      "description": "Investimento Teste 2",
+      "category": "Investimento - Saque",
+      "price": 1051.16,
+      "type": "income",
+      "createdAt": "2023-09-14T18:02:28.585Z",
+      "id": 9
+    },
+    {
+      "description": "Teste Investimento Atual",
+      "category": "Saque do Investimento: Teste Investimento Atual",
+      "price": 1313.95,
+      "type": "income",
+      "createdAt": "2023-09-14T18:10:00.121Z",
+      "id": 10
+    },
+    {
+      "description": "Teste Investimento 400",
+      "category": "Saque do Investimento: Teste Investimento 400",
+      "price": 10511.62,
+      "type": "income",
+      "createdAt": "2023-09-14T18:17:47.975Z",
+      "id": 11
+    },
+    {
+      "description": "investimento",
+      "category": "Investimento",
+      "price": 3000,
+      "type": "outcome",
+      "createdAt": "2023-09-14T18:19:05.494Z",
+      "id": 12
+    },
+    {
+      "description": "invest",
+      "category": "Investimento",
+      "price": 10000,
+      "type": "outcome",
+      "createdAt": "2023-09-14T18:23:15.997Z",
+      "id": 13
     }
-  ]
+  ],
+  "investments": []
 }

@@ -5,6 +5,7 @@ import { ProtectedRoute } from "./utils/private-router";
 import { Login } from "./pages/Login";
 import { NewUser } from "./pages/NewUser";
 import { Statistics } from "./pages/Statistics";
+import { Investments } from "./pages/Investments";
 
 export function Router() {
   return (
@@ -45,7 +46,7 @@ export function Router() {
         path="/investments"
         element={
           <ProtectedRoute>
-            <Transactions />
+            <Investments />
           </ProtectedRoute>
         }
       />

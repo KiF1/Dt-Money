@@ -20,7 +20,7 @@ export const BoxGraphics = styled.div`
   background-color: ${(props) => props.theme["gray-700"]};
 
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     font-weight: bold;
   }
   .graphic {
